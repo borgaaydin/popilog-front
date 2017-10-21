@@ -1,0 +1,18 @@
+<ul class="category-list">
+  <li *ngFor="let item of posts; let i = index" class="category-item">
+    <img src="{{item.image}}">
+    <div class="over-block">
+      <h2>
+        {{item.title}}
+      </h2>
+      <span class="url">
+        {{item.domain}}
+      </span>
+    </div>
+    <div class="right-block">
+      <p class="caption">
+        {{item.caption}}
+      </p>
+    </div>
+  </li>
+</ul>
