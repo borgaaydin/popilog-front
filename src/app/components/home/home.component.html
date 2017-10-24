@@ -1,18 +1,30 @@
 <ul class="category-list">
   <li *ngFor="let item of posts; let i = index" class="category-item">
-    <img src="{{item.image}}">
-    <div class="over-block">
-      <h2>
-        {{item.title}}
-      </h2>
-      <span class="url">
-        {{item.domain}}
-      </span>
-    </div>
-    <div class="right-block">
-      <p class="caption">
-        {{item.caption}}
-      </p>
-    </div>
+    <a href="{{item.url}}" target="_blank" (click)="sendClickCount(item.id)">
+      <div class="image-container">
+        <img src="{{item.image}}">
+      </div>
+      <div class="over-block">
+        <h2>
+          {{item.title}}
+        </h2>
+
+        <div class="item-info">
+        <span class="url">
+          {{item.domain}}
+        </span>
+
+          <div class="click-count">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            <span class="click-count__number">
+            {{item.click_count}}
+          </span>
+          </div>
+        </div>
+        <p>
+          {{item.description}}
+        </p>
+      </div>
+    </a>
   </li>
 </ul>
